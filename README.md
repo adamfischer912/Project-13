@@ -3,7 +3,7 @@ Hands on project for Bootcamp.
 
 ## Automated ELK Stack Deployment                                                                                                                                                                                                               
 
-The files in this repository were used to configure the network depicted below.                                                                                                                                                                  
+The files in this repository were used to configure the network depicted below.                                                                                                  https://github.com/adamfischer912/Project-13/blob/main/Diagrams/Diagram_azure.drawio                                                                
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the yml and config file may be used to install only certain pieces of it, such as Filebeat.                                                                                                                                                                                                                  Ansible\Docker\pentest.yml
 Ansible\ELK_Stack\ansible.cfg
 Ansible\ELK_Stack\elkpentest.yml
@@ -125,15 +125,15 @@ These ports were then made availible
 
      The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 Jump-Box-Provisioner
- 
+ https://github.com/adamfischer912/Project-13/blob/main/Images/Jump-Box-Provisioner.png
 Web-1
-                                                                                                                                
+https://github.com/adamfischer912/Project-13/blob/main/Images/Web-1.png                                                                                                                               
 Web-2
-  
+https://github.com/adamfischer912/Project-13/blob/main/Images/Web-2.png 
 Web-3
- 
+https://github.com/adamfischer912/Project-13/blob/main/Images/Web-3.png 
 Elk-Server
- 
+https://github.com/adamfischer912/Project-13/blob/main/Images/ELK-Server.png 
 
 ### Target Machines & Beats
 
@@ -147,13 +147,16 @@ This ELK server is configured to monitor the following machines:
 
 We have installed the following Beats on these machines:
 Filebeat
- 
+https://github.com/adamfischer912/Project-13/blob/main/Images/Filebeat%20Module%20Status.png 
 Metricbeat
-  
+https://github.com/adamfischer912/Project-13/blob/main/Images/Metricbeat%20Module%20Status.png  
 These Beats allow us to collect the following information from each machine:
 Filebeat is used to monitor the log files and locations. In my case it monitors mySQL, webservers, and Microsoft Azure tools.
-Metricbeat is used for collecting the metrics and stats of the operating system and putting them in a file you specify.                                                                                                                                         
- ### Using the Playbook                                                                                                  
+https://github.com/adamfischer912/Project-13/blob/main/Images/Filebeat%20Module%20Kibana%20Dashboard.png
+Metricbeat is used for collecting the metrics and stats of the operating system and putting them in a file you specify.                                                         https://github.com/adamfischer912/Project-13/blob/main/Images/Metricbeat%20Module%20Kibana%20Docker%20Overview.png                                                               https://github.com/adamfischer912/Project-13/blob/main/Images/Metricbeat%20Module%20Kibana%20Docker%20Web-1.png                
+https://github.com/adamfischer912/Project-13/blob/main/Images/Metricbeat%20Module%20Kibana%20Docker%20Web-2.png
+https://github.com/adamfischer912/Project-13/blob/main/Images/Metricbeat%20Module%20Kibana%20Docker%20Web-3.png
+### Using the Playbook                                                                                                  
 To use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned:
 •	Check the public IP address to see if it has changed.
 •	If it has changed update the security rules to allow the new public IP address.
