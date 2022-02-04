@@ -4,8 +4,6 @@ Hands on project for Bootcamp.
 ## Automated ELK Stack Deployment                                                                                                                                                                                                               
 
 The files in this repository were used to configure the network depicted below.                                                                                                                                                                  
- 
-
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the yml and config file may be used to install only certain pieces of it, such as Filebeat.                                                                                                                                                                                                                  Ansible\Docker\pentest.yml
 Ansible\ELK_Stack\ansible.cfg
 Ansible\ELK_Stack\elkpentest.yml
@@ -74,9 +72,9 @@ Elk Server	No	My public IP using TCP 5601
 ### Elk Configuration                                                                                                                                                                                                                           
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because 
-Ansible allows for quick and easy deployment of applications through yml playbook files.
-It reduces the amount of bugs and errors that can occur.
-Ansible makes it possible to have your whole infrastructure as a single script.
+â€¢	Ansible allows for quick and easy deployment of applications through yml playbook files.
+â€¢	It reduces the amount of bugs and errors that can occur.
+â€¢	Ansible makes it possible to have your whole infrastructure as a single script.
  
  The playbook implements the following tasks:
 - name: Configure Elk VM with Docker
@@ -121,33 +119,28 @@ This downloads and launches the docker elk container
         restart_policy: always
 These ports were then made availible       
  published ports:
-5601:5601
-9200:9200
-5044:5044
+â€¢	5601:5601
+â€¢	9200:9200
+â€¢	5044:5044
 
      The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 Jump-Box-Provisioner
  
- 
 Web-1
- 
-                                                                                                                               
+                                                                                                                                
 Web-2
- 
   
 Web-3
  
- 
 Elk-Server
- 
  
 
 ### Target Machines & Beats
 
 This ELK server is configured to monitor the following machines:
-Web-1: 10.0.0.5
-Web-2: 10.0.0.6
-Web-3: 10.0.0.7
+â€¢	Web-1: 10.0.0.5
+â€¢	Web-2: 10.0.0.6
+â€¢	Web-3: 10.0.0.7
 
 
 
@@ -155,76 +148,64 @@ Web-3: 10.0.0.7
 We have installed the following Beats on these machines:
 Filebeat
  
- 
 Metricbeat
- 
   
 These Beats allow us to collect the following information from each machine:
 Filebeat is used to monitor the log files and locations. In my case it monitors mySQL, webservers, and Microsoft Azure tools.
- 
-
 Metricbeat is used for collecting the metrics and stats of the operating system and putting them in a file you specify.                                                                                                                                         
- 
-Web-1
- 
-Web-2
- 
-Web-3
- 
-
-### Using the Playbook                                                                                                  
+ ### Using the Playbook                                                                                                  
 To use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned:
-Check the public IP address to see if it has changed.
-If it has changed update the security rules to allow the new public IP address.
+â€¢	Check the public IP address to see if it has changed.
+â€¢	If it has changed update the security rules to allow the new public IP address.
 SSH into the control node and follow the steps below: 
-Copy the yaml file to the ansible folder.
-Update the config file to include remote users and ports.
-Run the playbook and navigate to Kibana to check that the installation worked as expected. (Your_IP_Address:5601)                                                                                                                                            
+â€¢	Copy the yaml file to the ansible folder.
+â€¢	Update the config file to include remote users and ports.
+â€¢	Run the playbook and navigate to Kibana to check that the installation worked as expected. (Your_IP_Address:5601)                                                                                                                                            
 
 
 
 Which file is the playbook? Where do you copy it?
-For ansible use Ansible\Docker\pentest.yml
-For Filebeat use Ansible\Filebeat\filebeat-playbook.yml
-For Metricbeat use Ansible\Metricbeat\meticbeat-playbook.yml
+â€¢	For ansible use Ansible\Docker\pentest.yml
+â€¢	For Filebeat use Ansible\Filebeat\filebeat-playbook.yml
+â€¢	For Metricbeat use Ansible\Metricbeat\meticbeat-playbook.yml
 These files are copied to /etc/ansible
 
 Which file do you update to make Ansible run the playbook on a specific machine?
 /etc/ansible/hosts, then you update the IP address of the VM you want to add.
 
 How do I specify which machine to install the ELK server on versus which to install Filebeat on?
-I have set up 2 different groups in /etc/ansible/hosts. One group has the 3 IP’s and VMs that have filebeat installed on them. The other group has the ELK server and a the VM the ELK server is installed on.
+I have set up 2 different groups in /etc/ansible/hosts. One group has the 3 IPâ€™s and VMs that have filebeat installed on them. The other group has the ELK server and a the VM the ELK server is installed on.
 
 Which URL do you navigate to in order to check that the ELK server is running?
 http://Elk_VM_IP:5601/app/kibana
 
 As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc.
 
-‘ssh azureuser@jump-box-IP’ – log in to the jump-box-provisioner
-‘ssh-keygen’ - create an ssh key to connect to VMs
-‘ssh azureuser@Web-1-IP’ – login to Web-1 server 
-‘ssh azuresuer@Web-2-IP’ – login to Web-2 server
-‘ssh azuresuer@Web-3-IP’ – login to Web-3 Server
-‘ssh azuresuer@ELK-server-IP’ – login to Elk-server
-‘sudo docker container list -a’ – list all docker containers
-‘sudo docker ps -a’ – list all active and inactive containers
-‘sudo docker start affectionate_tu’ – start the docker container affectionate_tu
-‘sudo docker attach affectionate_tu’ – ssh and attach to the docker container affectionate_tu
-‘nano /etc/ansible/hosts’ – to edit the hosts file
-‘nano /etc/ansible/ansible.cfg’ - to edit the ansible config file
-‘nano /etc/ansible/pentest.yml’ – to edit the ansible playbook
-‘ansible-playbook (location) (filename)’ – run the ansible playbook
-‘sudo docker run -ti cyberxsecurity/ansible bash’ – run and create the docker container
-‘sudo systemctl status docker’ – check the status of the docker app
-‘sudo systemctl start docker’ – start the docker service
-‘sudo apt install docker.io’ – install the docker container app
-‘sudo service docker start’ start the docker app
-‘sudo apt-get update’ – run this to update all of the packages
-‘curl -L -O (The file on the web path)’ – use this to download a file from the web.
-‘dpkg -I (filename)’ – use this option to install the file
-‘http://Public_IP_VM:5601/app/kibana’ – the URL to navigate to kibana
-‘nano filebeat-config.yml’ – create and edit the filebeat config file
-‘nano filebeat-playbook.yml’ – create and edit the filebeat playbook
-‘nano metricbeat-config.yml’ – create and edit the metricbeat config file
-‘nano metricbeat-playbook.yml’ – create and edit the metricbeat playbook.
+â€˜ssh azureuser@jump-box-IPâ€™ â€“ log in to the jump-box-provisioner
+â€˜ssh-keygenâ€™ - create an ssh key to connect to VMs
+â€˜ssh azureuser@Web-1-IPâ€™ â€“ login to Web-1 server 
+â€˜ssh azuresuer@Web-2-IPâ€™ â€“ login to Web-2 server
+â€˜ssh azuresuer@Web-3-IPâ€™ â€“ login to Web-3 Server
+â€˜ssh azuresuer@ELK-server-IPâ€™ â€“ login to Elk-server
+â€˜sudo docker container list -aâ€™ â€“ list all docker containers
+â€˜sudo docker ps -aâ€™ â€“ list all active and inactive containers
+â€˜sudo docker start affectionate_tuâ€™ â€“ start the docker container affectionate_tu
+â€˜sudo docker attach affectionate_tuâ€™ â€“ ssh and attach to the docker container affectionate_tu
+â€˜nano /etc/ansible/hostsâ€™ â€“ to edit the hosts file
+â€˜nano /etc/ansible/ansible.cfgâ€™ - to edit the ansible config file
+â€˜nano /etc/ansible/pentest.ymlâ€™ â€“ to edit the ansible playbook
+â€˜ansible-playbook (location) (filename)â€™ â€“ run the ansible playbook
+â€˜sudo docker run -ti cyberxsecurity/ansible bashâ€™ â€“ run and create the docker container
+â€˜sudo systemctl status dockerâ€™ â€“ check the status of the docker app
+â€˜sudo systemctl start dockerâ€™ â€“ start the docker service
+â€˜sudo apt install docker.ioâ€™ â€“ install the docker container app
+â€˜sudo service docker startâ€™ start the docker app
+â€˜sudo apt-get updateâ€™ â€“ run this to update all of the packages
+â€˜curl -L -O (The file on the web path)â€™ â€“ use this to download a file from the web.
+â€˜dpkg -I (filename)â€™ â€“ use this option to install the file
+â€˜http://Public_IP_VM:5601/app/kibanaâ€™ â€“ the URL to navigate to kibana
+â€˜nano filebeat-config.ymlâ€™ â€“ create and edit the filebeat config file
+â€˜nano filebeat-playbook.ymlâ€™ â€“ create and edit the filebeat playbook
+â€˜nano metricbeat-config.ymlâ€™ â€“ create and edit the metricbeat config file
+â€˜nano metricbeat-playbook.ymlâ€™ â€“ create and edit the metricbeat playbook.
 
