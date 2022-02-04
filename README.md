@@ -3,7 +3,7 @@ Hands on project for Bootcamp.
 
 ## Automated ELK Stack Deployment                                                                                                                                                                                                               
 
-The files in this repository were used to configure the network depicted below.                                                                                                  https://github.com/adamfischer912/Project-13/blob/main/Diagrams/Diagram_azure.drawio                                                                
+The files in this repository were used to configure the network depicted below.                                                                                                 https://github.com/adamfischer912/Project-13/blob/main/Diagrams/Diagram_azure.drawio                                                                
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the yml and config file may be used to install only certain pieces of it, such as Filebeat.                                                                                                                                                                                                                  Ansible\Docker\pentest.yml
 Ansible\ELK_Stack\ansible.cfg
 Ansible\ELK_Stack\elkpentest.yml
@@ -51,7 +51,7 @@ Private-10.0.0.7	Linux
 ELK Server	Ubuntu Server	Public-52.159.116.52
 Private-10.1.0.4	Linux
 
-### Access Policies                                                                                                                                                                                                                             
+#### Access Policies                                                                                                                                                                                                                             
 
 The machines on the internal network are not exposed to the public Internet.  Only the Jump-box-provisioner machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses: My public IP address through my workstation IP                                                                                                   
 
@@ -69,13 +69,13 @@ Web-2	No	10.0.0.6 on ssh 22
 Web-3	No	10.0.0.7 on ssh 22
 Elk Server	No	My public IP using TCP 5601
 
-### Elk Configuration                                                                                                                                                                                                                           
+##### Elk Configuration                                                                                                                                                                                                                           
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because 
 •	Ansible allows for quick and easy deployment of applications through yml playbook files.
 •	It reduces the amount of bugs and errors that can occur.
 •	Ansible makes it possible to have your whole infrastructure as a single script.
- 
+''' 
  The playbook implements the following tasks:
 - name: Configure Elk VM with Docker
   hosts: elk
@@ -102,7 +102,7 @@ Installs python3 and pip3
         name: docker
         state: present
 
- Inreases memory
+ Increases memory
     - name: Use more memory
       sysctl:
         name: vm.max_map_count
@@ -117,6 +117,7 @@ This downloads and launches the docker elk container
         image: sebp/elk:761
         state: started
         restart_policy: always
+'''
 These ports were then made availible       
  published ports:
 •	5601:5601
