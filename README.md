@@ -1,5 +1,5 @@
 # Project-13
-Hands on project for Bootcamp.
+Azure and Elk Stack Deployment  
 ## Automated ELK Stack Deployment                                                                                                                                                                                                               
 The files in this repository were used to configure the network depicted below.                                                                                                                                                      
 ![Alt text](https://github.com/adamfischer912/Project-13/blob/main/Diagrams/Diagram_azure.png)
