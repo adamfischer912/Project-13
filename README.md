@@ -145,10 +145,10 @@ These Beats allow us to collect the following information from each machine:
 - Filebeat is used to monitor the log files and locations. In my case it monitors mySQL, webservers, and Microsoft Azure tools.  
 [Filebeat Module Kibana Dashboard](https://github.com/adamfischer912/Project-13/blob/main/Images/Filebeat%20Module%20Kibana%20Dashboard.png)
 - Metricbeat is used for collecting the metrics and stats of the operating system and putting them in a file you specify.  
-[Metricbeat Module Kibana Docker Overview](https://github.com/adamfischer912/Project-13/blob/main/Images/Metricbeat%20Module%20Kibana%20Docker%20Overview.png) 
-[Metricbeat Module Kibana Docker Web-1](https://github.com/adamfischer912/Project-13/blob/main/Images/Metricbeat%20Module%20Kibana%20Docker%20Web-1.png) 
-[Metricbeat Module Kibana Docker Web-2](https://github.com/adamfischer912/Project-13/blob/main/Images/Metricbeat%20Module%20Kibana%20Docker%20Web-2.png) 
-[Metricbeat Module Kibana Docker Web-3](https://github.com/adamfischer912/Project-13/blob/main/Images/Metricbeat%20Module%20Kibana%20Docker%20Web-3.png) 
+[Metricbeat Module Kibana Docker Overview](https://github.com/adamfischer912/Project-13/blob/main/Images/Metricbeat%20Module%20Kibana%20Docker%20Overview.png)  
+[Metricbeat Module Kibana Docker Web-1](https://github.com/adamfischer912/Project-13/blob/main/Images/Metricbeat%20Module%20Kibana%20Docker%20Web-1.png)  
+[Metricbeat Module Kibana Docker Web-2](https://github.com/adamfischer912/Project-13/blob/main/Images/Metricbeat%20Module%20Kibana%20Docker%20Web-2.png)  
+[Metricbeat Module Kibana Docker Web-3](https://github.com/adamfischer912/Project-13/blob/main/Images/Metricbeat%20Module%20Kibana%20Docker%20Web-3.png)  
 ## Using the Playbook
 To use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned:
 - Check the public IP address to see if it has changed.
