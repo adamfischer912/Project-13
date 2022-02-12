@@ -57,7 +57,7 @@ This document contains the following details:
 |Web-1|No|10.0.0.5 on ssh 22|
 |Web-2|No|10.0.0.6 on ssh 22|
 |Web-3|No|10.0.0.7 on ssh 22|
-|Elk Server|No|My public IP using TCP 5601|
+|Elk Server|Yes|My public IP using TCP 5601|
 
 ## Elk Configuration                                                                                                                                                                                                                           
 - Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because 
@@ -122,15 +122,15 @@ published ports:
 * 5044:5044
 - The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.  
 Jump-Box-Provisioner  
-https://github.com/adamfischer912/Project-13/blob/main/Images/Jump-Box-Provisioner.png  
+![Alt text](https://github.com/adamfischer912/Project-13/blob/main/Images/Jump-Box-Provisioner.png)  
 Web-1  
-https://github.com/adamfischer912/Project-13/blob/main/Images/Web-1.png  
+![Alt text](https://github.com/adamfischer912/Project-13/blob/main/Images/Web-1.png)  
 Web-2  
-https://github.com/adamfischer912/Project-13/blob/main/Images/Web-2.png   
+![Alt text](https://github.com/adamfischer912/Project-13/blob/main/Images/Web-2.png)   
 Web-3  
-https://github.com/adamfischer912/Project-13/blob/main/Images/Web-3.png   
+![Alt text](https://github.com/adamfischer912/Project-13/blob/main/Images/Web-3.png)   
 Elk-Server  
-https://github.com/adamfischer912/Project-13/blob/main/Images/ELK-Server.png   
+![Alt text](https://github.com/adamfischer912/Project-13/blob/main/Images/ELK-Server.png)   
 ## Target Machines & Beats
 This ELK server is configured to monitor the following machines:  
 - Web-1: 10.0.0.5  
