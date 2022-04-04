@@ -1,4 +1,4 @@
-# Project-13
+# Azure Network Configuration and ELK Stack Deployment
 Azure and Elk Stack Deployment  
 ## Automated ELK Stack Deployment                                                                                                                                                                                                               
 The files in this repository were used to configure the network depicted below.                                                                                                                                                      
